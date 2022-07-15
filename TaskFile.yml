@@ -1,0 +1,12 @@
+---
+version: '3'
+
+tasks:
+    vault-lab-consul-simple:
+        dir: ref-architectures/vault-consul-simple
+        cmds:
+            - docker-compose up -d --build
+
+    pre-commit:
+        cmds:
+            - pre-commit run --show-diff-on-failure --color always --all-files {{.CLI_ARGS}} # Pass arguments using -- <arg1> <arg2> ...
