@@ -39,7 +39,7 @@ jobs:
                   verbose: true
 
     build:
-        name: Build and Run Docker Containers
+        name: Build Docker Containers
         runs-on: ubuntu-latest
 
         strategy:
@@ -55,16 +55,14 @@ jobs:
             - name: Checkout Repository
               uses: actions/checkout@v2
 
-            - name: Build & Run Vault
-              id: build-and-run-vault
+            - name: Build Vault
+              id: build-vault
               working-directory: ${{ matrix.working_directory }}/vault
               run: |
                   docker build -t vault-ci:latest .
-                  docker run -t vault-ci:latest
 
-            - name: Build & Run Consul
-              id: build-and-run-consul
+            - name: Build Consul
+              id: build--consul
               working-directory: ${{ matrix.working_directory }}/consul
               run: |
                   docker build -t consul-ci:latest .
-                  docker run -t consul-ci:latest
