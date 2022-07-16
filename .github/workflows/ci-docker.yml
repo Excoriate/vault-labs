@@ -28,14 +28,14 @@ jobs:
               uses: hadolint/hadolint-action@master
               with:
                   dockerfile: ${{ matrix.working_directory }}/vault/Dockerfile
-                  ignore: DL3006
+                  ignore: DL3006,DL3059
                   verbose: true
             - name: Lint Dockerfile Consul
               id: lint-dockerfile-consul
               uses: hadolint/hadolint-action@master
               with:
                   dockerfile: ${{ matrix.working_directory }}/consul/Dockerfile
-                  ignore: DL3006
+                  ignore: DL3006,DL3059
                   verbose: true
 
     build:
