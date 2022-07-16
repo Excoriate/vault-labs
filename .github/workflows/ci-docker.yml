@@ -1,0 +1,70 @@
+---
+name: 'CI: Docker containers'
+
+on: [push, pull_request]
+
+defaults:
+    run:
+        shell: bash
+
+jobs:
+    ci:
+        name: Lint Docker image
+        runs-on: ubuntu-latest
+
+        strategy:
+            fail-fast: true
+            matrix:
+                include:
+                    - name: vault-consul-simple
+                      working_directory: ref-architectures/vault-consul-simple
+
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v2
+
+            - name: Lint Dockerfile Vault
+              id: lint-dockerfile-vaul
+              uses: hadolint/hadolint-action@master
+              with:
+                  dockerfile: ${{ matrix.working_directory }}/vault/Dockerfile
+                  ignore: DL3006
+                  verbose: true
+            - name: Lint Dockerfile Consul
+              id: lint-dockerfile-consul
+              uses: hadolint/hadolint-action@master
+              with:
+                  dockerfile: ${{ matrix.working_directory }}/consul/Dockerfile
+                  ignore: DL3006
+                  verbose: true
+
+    build:
+        name: Build and Run Docker Containers
+        runs-on: ubuntu-latest
+
+        strategy:
+            fail-fast: true
+            matrix:
+                include:
+                    - name: vault-consul-simple
+                      working_directory: ref-architectures/vault-consul-simple
+
+        needs: [ci]
+
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v2
+
+            - name: Build & Run Vault
+              id: build-and-run-vault
+              working-directory: ${{ matrix.working_directory }}/vault
+              run: |
+                  docker build -t vault-ci:latest .
+                  docker run -t vault-ci:latest
+
+            - name: Build & Run Consul
+              id: build-and-run-consul
+              working-directory: ${{ matrix.working_directory }}/consul
+              run: |
+                  docker build -t consul-ci:latest .
+                  docker run -t consul-ci:latest

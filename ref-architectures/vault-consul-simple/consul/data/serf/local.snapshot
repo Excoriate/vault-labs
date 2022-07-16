@@ -3,3 +3,13 @@ alive: df4481a70068 172.20.0.3:8301
 clock: 1
 event-clock: 1
 event-clock: 2
+alive: 6bfe50268c69 172.20.0.3:8301
+event-clock: 3
+event-clock: 4
+event-clock: 5
+event-clock: 6
+event-clock: 7
+alive: db811293d76c 172.20.0.2:8301
+alive: 4b712a978305 172.20.0.3:8301
+clock: 2
+event-clock: 8

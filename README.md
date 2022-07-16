@@ -2,7 +2,7 @@
   <img alt="logo" src="https://adinermie.com/wp-content/uploads/2019/08/HashiVault.png" width="224px"/><br/>
   Vault Labs
 </h1>
-<p align="center">Quickly bootstrap and create vault implementations, for fun, <b>certification preparations</b> (very handy), <b>break things safely :)</b> or whatever you like.<br/><br/>Focus on <b>writing</b> code and <b>thinking</b> of business-logic! The CLI will take care of the rest.</p>
+<p align="center">Quickly bootstrap and create vault implementations, for fun, <b>certification preparations</b> (very handy), <b>break things safely :)</b> or whatever you like.<br/><br/>
 
 ## ⚡️ Quick start
 

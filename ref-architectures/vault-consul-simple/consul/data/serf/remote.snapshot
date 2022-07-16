@@ -2,3 +2,8 @@ alive: 6bfe50268c69.localhost 172.20.0.2:8302
 alive: df4481a70068.localhost 172.20.0.3:8302
 clock: 1
 clock: 2
+alive: 6bfe50268c69.localhost 172.20.0.3:8302
+alive: db811293d76c.localhost 172.20.0.2:8302
+alive: 4b712a978305.localhost 172.20.0.3:8302
+clock: 3
+clock: 4
