@@ -4,6 +4,9 @@
 </h1>
 <p align="center">Quickly bootstrap and create vault implementations, for fun, <b>certification preparations</b> (very handy), <b>break things safely :)</b> or whatever you like.<br/><br/>
 
+[![CI: Docker containers](https://github.com/Excoriate/vault-labs/actions/workflows/ci-docker.yml/badge.svg)](https://github.com/Excoriate/vault-labs/actions/workflows/ci-docker.yml)
+[![Auto Release](https://github.com/Excoriate/vault-labs/actions/workflows/release.yml/badge.svg)](https://github.com/Excoriate/vault-labs/actions/workflows/release.yml)
+
 ## ⚡️ Quick start
 
 First, ensure you have [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/install/) installed. Ah, yes.. also [TaskFile](taskfile.dev/).
